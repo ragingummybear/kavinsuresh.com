@@ -36,7 +36,7 @@ function renderPoem(i) {
   app.innerHTML = `
     <article>
       <h1>${esc(p.title)}</h1>
-      <div class="d">${esc(fmt(p.date))}</div>
+      <div class="d">${p.form ? esc(p.form) + " &middot; " : ""}${esc(fmt(p.date))}</div>
       <div class="body">${esc(p.body.trim())}</div>
       ${p.note ? `<aside class="note"><div class="note-h">Inspiration</div>${renderNote(p.note)}</aside>` : ""}
     </article>

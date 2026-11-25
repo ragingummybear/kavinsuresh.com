@@ -4,12 +4,14 @@
 // and change the title, date and body. Keep the backticks around the body.
 // Line breaks and blank lines inside the body show up exactly as you type them.
 //
+// "form" is optional (e.g. "Tanka", "Haiku"). It shows next to the date.
 // "note" is optional. It shows under the poem as the inspiration.
 // Blank lines start a new paragraph, and [link text](https://...) makes a link.
 
 window.POEMS = [
   {
     title: "Dancing with the Fog",
+    form: "Tanka",
     date: "2026-11-24",
     body: `Dancing with the fog
 Lovers, soon to be parted
