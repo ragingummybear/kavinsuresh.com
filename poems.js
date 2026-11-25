@@ -20,6 +20,6 @@ Now I dance alone at dawn`,
 
 In the morning I was climbing (aka dancing on the pedals) Calaveras road as the sun came up. The thick fog was burning off and there was beautiful moment right next to the Calaveras watershed, which I could clearly see as I climbed. I saw the sun beaming down, as if it was afternoon even, and the fog was rising and wispy, yet still a thick white for the traces that remained. It wanted to stay so bad, yet it was getting pulled away and it made me a bit sad. It really stuck with me. I haven't seen something like that in a while and it really stuck with me. Seeing fog with the sun that exposed is rare I feel.
 
-I love run on sentences and terrible grammar, also I wish I took a photo of what it looked like. I was too entranced and busy climbing I guess`,
+I love run on sentences and terrible grammar, also I wish I took a photo of what it looked like. I was too entranced and busy climbing I guess.`,
   },
 ];
