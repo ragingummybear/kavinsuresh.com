@@ -14,6 +14,13 @@ function fmt(d) {
   return isNaN(dt) ? d : dt.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 }
 
+function renderNote(n) {
+  return n.trim().split(/\n\s*\n/).map(para =>
+    "<p>" + esc(para).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener">$1</a>') + "</p>"
+  ).join("");
+}
+
 function renderIndex() {
   document.title = "Kavin Suresh";
   if (!poems.length) { app.innerHTML = '<p class="empty">Nothing here yet.</p>'; return; }
@@ -31,6 +38,7 @@ function renderPoem(i) {
       <h1>${esc(p.title)}</h1>
       <div class="d">${esc(fmt(p.date))}</div>
       <div class="body">${esc(p.body.trim())}</div>
+      ${p.note ? `<aside class="note"><div class="note-h">Inspiration</div>${renderNote(p.note)}</aside>` : ""}
     </article>
     <nav class="pn">
       ${older ? `<a href="#/${older.slug}">&larr; ${esc(older.title)}</a>` : `<a href="#/">All poems</a>`}
