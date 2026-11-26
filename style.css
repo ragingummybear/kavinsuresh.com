@@ -31,6 +31,38 @@ header { margin-bottom: 3.5rem; }
 .name a:hover { color: var(--accent); }
 .tag { color: var(--muted); font-style: italic; margin-top: 0.15rem; }
 
+/* calendar heatmap */
+.cal-wrap { margin: -1rem 0 2.75rem; }
+.cal { --c: 15px; display: flex; gap: 3px; overflow-x: auto; padding: 2px 2px 6px; scrollbar-width: thin; }
+.wk { display: grid; grid-template-rows: 1.1rem repeat(7, var(--c)); gap: 3px; flex: none; }
+.wk .mo { font-size: 0.7rem; color: var(--muted); width: var(--c); white-space: nowrap; overflow: visible; line-height: 1; }
+.dows { position: sticky; left: 0; z-index: 1; background: var(--bg); padding-right: 4px; }
+.dows span { font-size: 0.65rem; color: var(--muted); line-height: var(--c); width: 1.7rem; }
+.day { display: block; width: var(--c); height: var(--c); border-radius: 3px; background: var(--rule); }
+.day.future { background: transparent; }
+.day.l1 { background: color-mix(in srgb, var(--accent) 35%, var(--bg)); }
+.day.l2 { background: color-mix(in srgb, var(--accent) 60%, var(--bg)); }
+.day.l3 { background: color-mix(in srgb, var(--accent) 80%, var(--bg)); }
+.day.l4 { background: var(--accent); }
+a.day:hover, a.day:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.day.today { box-shadow: inset 0 0 0 1px var(--muted); }
+.day.sel { outline: 2px solid var(--ink); outline-offset: 1px; }
+.cal-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+.legend { display: inline-flex; align-items: center; gap: 3px; }
+.legend .day { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+
+/* a day, journal style */
+.dayview h1 { font-weight: 400; font-size: 1.6rem; line-height: 1.25; margin: 0 0 2rem; }
+.entry { padding-bottom: 2.25rem; margin-bottom: 2.25rem; border-bottom: 1px solid var(--rule); }
+.entry:last-of-type { border-bottom: 0; margin-bottom: 0; }
+.entry h2 { font-weight: 500; font-size: 1.25rem; margin: 0 0 0.15rem; }
+.entry h2 a:hover { color: var(--accent); }
+.entry .d { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.entry .note { margin-top: 1.75rem; }
+.entry .more { font-size: 0.9rem; margin: 1rem 0 0; }
+.entry .more a { color: var(--accent); }
+.dlink:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
 ol.index { list-style: none; margin: 0; padding: 0; }
 ol.index li { border-top: 1px solid var(--rule); }
 ol.index li:last-child { border-bottom: 1px solid var(--rule); }
