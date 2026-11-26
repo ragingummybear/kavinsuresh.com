@@ -10,6 +10,15 @@
 
 window.POEMS = [
   {
+    title: "Kilkare",
+    form: "Haiku",
+    date: "2026-11-25",
+    body: `Kilkare: dull climb
+Why does it appeal to me?
+Nostalgia I think`,
+    note: `I did Kilkare climb in Sunol today and wondered why I like it so much despite it not being that interesting. It is my home climb that I have done a billion times and started climbing on for bikes.`,
+  },
+  {
     title: "Dancing with the Fog",
     form: "Tanka",
     animation: "anim/dancing-with-the-fog.js",
