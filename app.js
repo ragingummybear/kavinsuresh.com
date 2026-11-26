@@ -37,6 +37,7 @@ function renderPoem(i) {
     <article>
       <h1>${esc(p.title)}</h1>
       <div class="d">${p.form ? esc(p.form) + " &middot; " : ""}${esc(fmt(p.date))}</div>
+      ${p.animation ? `<div class="anim" id="anim"></div>` : ""}
       <div class="body">${esc(p.body.trim())}</div>
       ${p.note ? `<aside class="note"><div class="note-h">Inspiration</div>${renderNote(p.note)}</aside>` : ""}
     </article>
@@ -44,6 +45,20 @@ function renderPoem(i) {
       ${older ? `<a href="#/${older.slug}">&larr; ${esc(older.title)}</a>` : `<a href="#/">All poems</a>`}
       ${newer ? `<a class="next" href="#/${newer.slug}">${esc(newer.title)} &rarr;</a>` : ""}
     </nav>`;
+  if (p.animation) mountAnimation(p);
+}
+
+function mountAnimation(p) {
+  const run = () => {
+    const el = document.getElementById("anim");
+    const fn = (window.POEM_ANIMATIONS || {})[p.slug];
+    if (el && fn) fn(el, p.body.trim().split("\n").filter(l => l.trim()));
+  };
+  if ((window.POEM_ANIMATIONS || {})[p.slug]) return run();
+  const s = document.createElement("script");
+  s.src = p.animation;
+  s.onload = run;
+  document.head.appendChild(s);
 }
 
 function route() {

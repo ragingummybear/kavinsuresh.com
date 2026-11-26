@@ -12,6 +12,7 @@ window.POEMS = [
   {
     title: "Dancing with the Fog",
     form: "Tanka",
+    animation: "anim/dancing-with-the-fog.js",
     date: "2026-11-24",
     body: `Dancing with the fog
 Lovers, soon to be parted
