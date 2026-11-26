@@ -117,7 +117,7 @@ function renderPoem(i) {
       <div class="body">${esc(p.body.trim())}</div>
       ${p.secret ? `<aside class="note secret" id="secret">
         <form class="unlock" id="unlock">
-          <label for="pw">The real inspiration is locked.</label>
+          <label for="pw">The moment behind this one is locked.</label>
           <span class="unlock-row"><input id="pw" type="password" autocomplete="off" placeholder="Password"><button type="submit">Unlock</button></span>
           <span class="unlock-msg" id="unlock-msg" aria-live="polite"></span>
         </form>
@@ -162,7 +162,7 @@ function mountSecret(p) {
     const text = await unlockSecret(p.secret, pw);
     form.querySelector("button").disabled = false;
     if (text === null) { msg.textContent = "That's not it."; return; }
-    document.getElementById("secret").innerHTML = `<div class="note-h">The real inspiration</div>${renderNote(text)}`;
+    document.getElementById("secret").innerHTML = `<div class="note-h">The moment behind it</div>${renderNote(text)}`;
   });
 }
 
