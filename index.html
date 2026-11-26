@@ -20,7 +20,16 @@
   <footer>&copy; <span id="yr"></span> Kavin Suresh</footer>
 </div>
 
-<script src="poems.js"></script>
-<script src="app.js"></script>
+<script>
+  // Load poems and page code fresh on every visit, so new poems show up right away
+  // instead of waiting out the browser cache.
+  (function load(files) {
+    if (!files.length) return;
+    const s = document.createElement("script");
+    s.src = files[0] + "?v=" + Date.now();
+    s.onload = () => load(files.slice(1));
+    document.body.appendChild(s);
+  })(["poems.js", "app.js"]);
+</script>
 </body>
 </html>
