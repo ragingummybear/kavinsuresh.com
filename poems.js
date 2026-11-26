@@ -10,6 +10,15 @@
 
 window.POEMS = [
   {
+    title: "Awake",
+    form: "Haiku",
+    date: "2026-11-25",
+    body: `I am now awake!
+Feeling groggy, yet placid
+A scream, my peace gone`,
+    note: `When you wake up, you feel a calmness. But something always arrives to take it away: work messages, a reminder of things not dealt with, and even a literal scream!`,
+  },
+  {
     title: "Kilkare",
     form: "Haiku",
     date: "2026-11-25",
