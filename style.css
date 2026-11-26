@@ -31,6 +31,13 @@ header { margin-bottom: 3.5rem; }
 .name a:hover { color: var(--accent); }
 .tag { color: var(--muted); font-style: italic; margin-top: 0.15rem; }
 
+.back {
+  display: inline-flex; align-items: center; gap: 0.35rem; margin: -1.5rem 0 2rem;
+  padding: 0.35rem 0.95rem; min-height: 40px; border: 1px solid var(--rule); border-radius: 999px;
+  font-size: 0.95rem; color: var(--ink); transition: border-color 0.2s, color 0.2s;
+}
+.back:hover, .back:focus-visible { border-color: var(--accent); color: var(--accent); }
+
 /* calendar heatmap */
 .cal-wrap { margin: -1rem 0 2.75rem; }
 .cal { --c: 15px; display: flex; gap: 3px; overflow-x: auto; padding: 2px 2px 6px; scrollbar-width: thin; }

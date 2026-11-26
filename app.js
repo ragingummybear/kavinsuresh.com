@@ -25,6 +25,7 @@ function renderNote(n) {
 const pad = n => String(n).padStart(2, "0");
 const ymd = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 const parseYmd = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const BACK = `<a class="back" href="#/">&larr; All poems</a>`;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function renderCalendar(selected) {
@@ -88,7 +89,7 @@ function renderIndex() {
 function renderDay(key) {
   const list = poems.filter(p => p.date === key);
   document.title = fmt(key) + " | Kavin Suresh";
-  app.innerHTML = renderCalendar(key) + `
+  app.innerHTML = BACK + renderCalendar(key) + `
     <section class="dayview">
       <h1>${esc(parseYmd(key).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }))}</h1>
       ${list.length ? list.map(p => `
@@ -108,7 +109,7 @@ function renderPoem(i) {
   const p = poems[i];
   const newer = poems[i - 1], older = poems[i + 1];
   document.title = p.title + " | Kavin Suresh";
-  app.innerHTML = `
+  app.innerHTML = BACK + `
     <article>
       <h1>${esc(p.title)}</h1>
       <div class="d">${p.form ? esc(p.form) + " &middot; " : ""}<a class="dlink" href="#/day/${esc(p.date)}">${esc(fmt(p.date))}</a></div>
